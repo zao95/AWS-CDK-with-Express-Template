@@ -8,11 +8,13 @@ Simple template with AWS CDK and Express
 -   Enable import using the Babel
 -   Setting up API testing locally
 
-## Install
+## Installation
+
+It is written as a Windows-only command.
+If an error occurs, MAC/Linux user should modify scripts in /package.json.
 
 ```
-// nodeJS modules install
-npm i
+// nodeJS modules install npm run package-install
 ```
 
 ## Run

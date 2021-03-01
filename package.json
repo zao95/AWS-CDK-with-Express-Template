@@ -4,13 +4,16 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "build": "npm run build:infra && npm run build:server",
-        "build:server": "babel ./src --out-dir ./dist --extensions \".ts\" && npm install --only=prod --prefix ./dist",
-        "build:infra": "babel ./infra --out-dir ./infra-dist --extensions \".ts\"",
+        "package-install": "npm run remove-node_modules && npm run prod-package-install && npm i",
+        "remove-node_modules": "if exist .\\node_modules\\ rmdir .\\node_modules\\ /s /q",
+        "prod-package-install": "npm install --only=prod && xcopy node_modules dist\\node_modules /e /h /y",
+        "build": "npm run build-infra && npm run build-server",
+        "build-server": "babel ./src --out-dir ./dist --extensions \".ts\"",
+        "build-infra": "babel ./infra --out-dir ./infra-dist --extensions \".ts\"",
         "express-offline": "npm run build:server && set NODE_ENV=Offline && node ./dist/entry.js",
-        "bootstrap": "npm run build && cdk bootstrap",
-        "deploy": "npm run build && cdk deploy",
-        "destroy": "cdk destroy"
+        "bootstrap": "cdk bootstrap --profile educate",
+        "deploy": "npm run build && cdk deploy --profile educate",
+        "destroy": "cdk destroy --profile educate"
     },
     "author": "Lee Jeong-Woo",
     "license": "ISC",
