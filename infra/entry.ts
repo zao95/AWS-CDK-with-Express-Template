@@ -1,7 +1,9 @@
+#!/usr/bin/env node
+
 import { App } from '@aws-cdk/core'
 
-import { RestApiStack } from './restapi-stack'
+import { ExpressStack } from './express-stack'
 
 const app = new App()
 
-new RestApiStack(app, 'WaniSampleRestApiStack')
+new ExpressStack(app, 'AwmakerSampleExpressStack')

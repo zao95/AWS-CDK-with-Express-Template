@@ -1,13 +1,23 @@
-import { APIGatewayProxyHandler } from "aws-lambda";
+import { APIGatewayProxyHandler } from 'aws-lambda'
+import { createServer, proxy } from 'aws-serverless-express'
+import express from 'express'
 
-export const handler: APIGatewayProxyHandler = async (event) => {
-    return {
-        statusCode: 200,
-        headers: {
-            "Content-Type": "application/json; charset=utf-8",
-        },
-        body: JSON.stringify({
-            message: "hello AWS CDK!",
-        }),
-    };
-};
+const app = express()
+
+app.get('/', (req, res) => {
+    res.json({
+        message: 'hello Express!',
+    })
+})
+
+app.get('/about', (req, res) => {
+    res.json({
+        message: 'this is about page',
+    })
+})
+
+const server = createServer(app)
+
+export const handler: APIGatewayProxyHandler = (event, context) => {
+    proxy(server, event, context)
+}

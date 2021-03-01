@@ -4,12 +4,13 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "synth": "cdk synth --profile educate",
-        "bootstrap": "cdk bootstrap --profile educate",
-        "deploy": "cdk deploy --profile educate",
-        "destroy": "cdk destroy --profile educate",
+        "build": "npm run build:infra && npm run build:server",
         "build:server": "babel ./src --out-dir ./dist --extensions \".ts\"",
-        "build:infra": "babel ./infra --out-dir ./infra-dist --extensions \".ts\""
+        "build:infra": "babel ./infra --out-dir ./infra-dist --extensions \".ts\"",
+        "synth": "cdk synth --profile educate",
+        "bootstrap": "npm run build && distize ./src-dist/* && cdk bootstrap --profile educate",
+        "deploy": "npm run build && distize ./src-dist/* && cdk deploy --profile educate",
+        "destroy": "cdk destroy --profile educate"
     },
     "author": "Lee Jeong-Woo",
     "license": "ISC",
@@ -24,9 +25,15 @@
         "@babel/preset-env": "^7.13.8",
         "@babel/preset-typescript": "^7.13.0",
         "@types/aws-lambda": "^8.10.72",
+        "@types/aws-serverless-express": "^3.3.3",
         "@types/node": "^14.14.31",
         "aws-cdk": "^1.91.0",
         "core-js": "^3.9.1",
+        "distize": "^2.0.0",
         "typescript": "^4.2.2"
+    },
+    "dependencies": {
+        "aws-serverless-express": "^3.4.0",
+        "express": "^4.17.1"
     }
 }
