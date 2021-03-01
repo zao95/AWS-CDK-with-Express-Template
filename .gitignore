@@ -2,3 +2,5 @@
 /dist
 /infra-dist
 /node_modules
+.eslintrc.json
+.prettierrc
