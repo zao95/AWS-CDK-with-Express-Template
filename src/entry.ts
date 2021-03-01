@@ -19,7 +19,7 @@ app.get('/about', (req, res) => {
 
 const server = createServer(app)
 
-if (process.env.NODE_ENV === 'Offline') {
+if (process.env.NODE_ENV === 'Offline ') {
     app.listen(port, () => {
         console.log(`Example app listening at http://localhost:${port}`)
     })

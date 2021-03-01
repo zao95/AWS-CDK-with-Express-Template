@@ -10,7 +10,7 @@
         "build": "npm run build-infra && npm run build-server",
         "build-server": "babel ./src --out-dir ./dist --extensions \".ts\"",
         "build-infra": "babel ./infra --out-dir ./infra-dist --extensions \".ts\"",
-        "express-offline": "npm run build:server && set NODE_ENV=Offline && node ./dist/entry.js",
+        "express-offline": "npm run build-server && set NODE_ENV=Offline && node ./dist/entry.js",
         "bootstrap": "cdk bootstrap --profile educate",
         "deploy": "npm run build && cdk deploy --profile educate",
         "destroy": "cdk destroy --profile educate"
