@@ -7,6 +7,7 @@
         "build": "npm run build:infra && npm run build:server",
         "build:server": "babel ./src --out-dir ./dist --extensions \".ts\"",
         "build:infra": "babel ./infra --out-dir ./infra-dist --extensions \".ts\"",
+        "express-offline": "npm run build:server && node ./dist/entry.js",
         "synth": "cdk synth --profile educate",
         "bootstrap": "npm run build && distize ./src-dist/* && cdk bootstrap --profile educate",
         "deploy": "npm run build && distize ./src-dist/* && cdk deploy --profile educate",
