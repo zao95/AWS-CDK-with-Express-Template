@@ -9,8 +9,8 @@ export class ExpressStack extends Stack {
 
         const code = Code.fromAsset(join(__dirname, '../dist'))
 
-        new LambdaRestApi(this, 'AwmakerExpress', {
-            handler: new LFunction(this, 'AwmakerHomeHandler', {
+        new LambdaRestApi(this, 'Express', {
+            handler: new LFunction(this, 'HomeHandler', {
                 runtime: Runtime.NODEJS_12_X,
                 code,
                 handler: 'entry.handler',

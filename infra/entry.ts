@@ -6,4 +6,4 @@ import { ExpressStack } from './express-stack'
 
 const app = new App()
 
-new ExpressStack(app, 'AwmakerSampleExpressStack')
+new ExpressStack(app, 'SampleExpressStack')
