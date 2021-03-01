@@ -1,0 +1,32 @@
+{
+    "name": "cdk-awmaker",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "synth": "cdk synth --profile educate",
+        "bootstrap": "cdk bootstrap --profile educate",
+        "deploy": "cdk deploy --profile educate",
+        "destroy": "cdk destroy --profile educate",
+        "build:server": "babel ./src --out-dir ./dist --extensions \".ts\"",
+        "build:infra": "babel ./infra --out-dir ./infra-dist --extensions \".ts\""
+    },
+    "author": "Lee Jeong-Woo",
+    "license": "ISC",
+    "devDependencies": {
+        "@aws-cdk/aws-apigateway": "^1.91.0",
+        "@aws-cdk/aws-lambda": "^1.91.0",
+        "@aws-cdk/core": "^1.91.0",
+        "@babel/cli": "^7.13.0",
+        "@babel/core": "^7.13.8",
+        "@babel/plugin-proposal-class-properties": "^7.13.0",
+        "@babel/plugin-proposal-object-rest-spread": "^7.13.8",
+        "@babel/preset-env": "^7.13.8",
+        "@babel/preset-typescript": "^7.13.0",
+        "@types/aws-lambda": "^8.10.72",
+        "@types/node": "^14.14.31",
+        "aws-cdk": "^1.91.0",
+        "core-js": "^3.9.1",
+        "typescript": "^4.2.2"
+    }
+}
