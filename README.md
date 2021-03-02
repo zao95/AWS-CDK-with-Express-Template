@@ -18,7 +18,7 @@ Simple template with AWS CDK and Express
 
 2. nodeJS modules install
 
->   **DO NOT USE NPM INSTALL**
+    **DO NOT USE NPM INSTALL**
 
     ```
     // Linux
