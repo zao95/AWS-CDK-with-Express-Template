@@ -11,7 +11,8 @@ Simple template with AWS CDK and Express
 ## Installation
 
 ```
-// nodeJS modules install npm run package-install
+// nodeJS modules install
+npm run package-install
 ```
 
 It is written as a **Windows-only** command.
