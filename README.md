@@ -4,7 +4,7 @@ Simple template with AWS CDK and Express
 
 ## Feature
 
--   Partial installation using npm --prefix and --only
+-   Partial installation using npm --only
 -   Enable import using the Babel
 -   Setting up API testing locally
 
@@ -18,7 +18,7 @@ Simple template with AWS CDK and Express
 
 2. nodeJS modules install
 
-    **DO NOT USE NPM INSTALL**
+>   **DO NOT USE NPM INSTALL**
 
     ```
     // Linux
